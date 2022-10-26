@@ -15,11 +15,7 @@ EEL is an algorithm that discovers sample-specific root causes even when confoun
 # Run the Oracle Version
 
 Instantiate number of variables p, number of samples n, number of latents L:
-> p = 25
-
-> n = 200
-
-> L = runif(1)*20
+> p = 25; n = 200; L = runif(1)*20
 
 Generate the grouth truth DAG:
 > G = generate_DAG_lat(p=p,en=2,perc_lat = L)
@@ -32,7 +28,7 @@ Sample DAG and normalize. The oracle needs some samples to compute regression re
 Remove target and latents from data
 > X$data[,-c(G$Y,G$L)] = nD$X[,-c(G$Y,G$L)]
  
-Get all the info required by the oracle:
+Get all the info required by the oracle including ground truth total effects, ground truth errors, index of target, index of latents:
 > oracle = organize_oracle(G,X,p,L)
 
 Run EEL:
