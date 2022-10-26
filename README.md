@@ -2,6 +2,8 @@
 
 EEL is an algorithm that discovers sample-specific root causes even when confounding exists among the predictors. The algorithm does not require knowledge about the underlying causal graph. EEL also identifies the sample-specific total effects of each root cause when theory allows; otherwise, it outputs a measure of predictivity, and these two cases are unified under Shapley values. EEL is designed to handle a noisy binary target -- like a diagnostic label -- and is therefore particularly suitable for identifying root causes of disease.
 
+The ``Experiments`` folder contains code to replicate the experimental results in the paper. Please cite the article if you use any of the code in this repository.
+
 # Installation
 
 > library(devtools)
