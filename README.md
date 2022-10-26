@@ -1,4 +1,4 @@
-![alt text](https://github.com/ericstrobl/EEL/EEL.png)
+![alt text](https://github.com/ericstrobl/EEL/EEL.png?raw=true)
 
 # Extract Errors with Latents (EEL)
 
