@@ -48,7 +48,7 @@ for (i in 113:200){
           
           # EEL
           ptm <- proc.time()
-          out = EEL13_fast_all(X$data[1:ns[n],-c(G$Y,G$L)],X$data[1:ns[n],G$Y])
+          out = EEL(X$data[1:ns[n],-c(G$Y,G$L)],X$data[1:ns[n],G$Y])
           out$scores = out$scores[ix,]
           # colnames(out$G) <- cx[out$order]; rownames(out$G) <- cx[out$order]
           # print(out$G)
