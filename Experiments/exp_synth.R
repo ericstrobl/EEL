@@ -20,7 +20,7 @@ ICA_res = Gs
 RCAO_res = Gs
 MS_res = Gs
 
-for (i in 113:200){
+for (i in 1:200){
   print(i)
   for (p in 1:length(ps)){
     for (L in 1:length(Ls)){
