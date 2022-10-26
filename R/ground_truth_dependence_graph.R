@@ -25,3 +25,38 @@ ground_truth_dependence_graph <- function(DAG){
   diag(G) = FALSE
   return(G)
 }
+
+er_IP_to_b <- function(graph,Ls,Ancb,b,visited=rep(FALSE,nrow(graph))){
+  
+  visited[b] = TRUE
+  
+  if (b %in% Ls){ #if last vertex was not observed
+    adj = setdiff( intersect(which(graph[b,]>0),Ancb), which(visited) ) # then next vertex must be observed
+  } else{ #if last vertex was observed
+    adj = setdiff( intersect(which(graph[,b]>0),Ls), which(visited) ) # then next vertex must be latent
+  }
+  
+  for (j in adj){
+    visited = IP_to_b(graph,Ls,Ancb,j,visited)
+  }
+  
+  return(visited)
+}
+
+
+IP_to_b <- function(graph,Ls,Ancb,b,visited=rep(FALSE,nrow(graph))){
+  
+  visited[b] = TRUE
+  
+  if (b %in% Ls){ #if last vertex was not observed
+    adj = setdiff( intersect(which(graph[b,]>0),Ancb), which(visited) ) # then next vertex must be observed
+  } else{ #if last vertex was observed
+    adj = setdiff( intersect(which(graph[,b]>0),Ls), which(visited) ) # then next vertex must be latent
+  }
+  
+  for (j in adj){
+    visited = IP_to_b(graph,Ls,Ancb,j,visited)
+  }
+  
+  return(visited)
+}
