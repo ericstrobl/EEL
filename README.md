@@ -60,5 +60,5 @@ Run EEL:
 Compute ground truth dependence graph of inducing terms:
 > G_theory = ground_truth_dependence_graph(G)
 
-Print number of errors, should be zero
+Print number of errors, should be zero:
 > print(sum(out$G != G_theory[-c(G$Y,G$L),-c(G$Y,G$L)])) 
