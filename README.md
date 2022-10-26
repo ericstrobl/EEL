@@ -8,6 +8,8 @@ The ``Experiments`` folder contains code to replicate the experimental results i
 
 # Installation
 
+Press the green button up top and download the zip file. Then:
+
 > library(devtools)
 
 > install_local("Directory of EEL-main.zip")
