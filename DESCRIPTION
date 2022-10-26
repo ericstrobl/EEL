@@ -5,7 +5,7 @@ Version: 0.1.0
 Author: Anonymous
 Maintainer: Anonymous <anonymous@gmail.com>
 Description: See README
-Depends: Rfast, independence, RcppHungarian, ica, randomForest, RANN, gtools, glmnet
+Depends: Rfast, independence, RcppHungarian, ica, randomForest, RANN, gtools, glmnet, namespace, pcalg, DirichletReg, treeshap
 License: CC BY-NC 4.0
 Encoding: UTF-8
 LazyData: true
