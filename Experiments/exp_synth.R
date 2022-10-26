@@ -29,7 +29,7 @@ for (i in 1:200){
       G = generate_DAG_lat(p=ps[p],en=2,perc_lat = Ls[L])
       plot(as(G$graph,"graphNEL"))
       # print(G$L); print(G$Y)
-      Gs[[i]][[p]][[L]][[n]]$G = G
+      Gs[[i]][[p]][[L]][[1]]$G = G
       
       X = sample_DAG_lat(nsamps = 100000,G)
       nD = normalizeData2(X$data) # normalize to prevent gaming of variances
