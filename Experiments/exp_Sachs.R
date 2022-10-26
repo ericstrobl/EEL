@@ -46,27 +46,17 @@ MS_res = EEL_res
 r = nrow(err)
 L1 = which(colSums(G$graph)==0)
 Y1 = (1:11)[-L1]
-# Y1 = c(7,10,11)
 for (ii in 20:reps){
   print(ii)
   
   G$Y = sample(Y1,sample(1:3,1)) # potential latents
-  # G$L = isAnc(G$graph,L1,G$Y); # latent must be an ancestor of the target
   G$L = L1
   
   ######
   G$L = sample(G$L,sample(1:length(G$L),1)) # sample target
-  # G$Y = 7
-  # G$Y = sample(c(7,10,11),1) # sample target
-  # G$L = 9
-  # G$L = G$L[sample(1:length(G$L),length(G$L),replace=FALSE)] #permute latents
-  # G$L = G$L[1:sample(1:length(G$L),1)] # pick random latents with random lengths
   
   samps = sample_DAG_lat_err(r,G,as.matrix(err))
   G$Y = 12
-  
-  # ib = sample(r,r,replace=FALSE)
-  # samps = list(); samps$data = data[ib,]; samps$err = err[ib,]
   
   nD = normalizeData2(samps$data) # normalize to prevent gaming of variances
 
