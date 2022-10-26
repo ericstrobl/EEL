@@ -18,7 +18,7 @@ Press the green button up top and download the zip file. Then:
 
 # Run the Sample Version
 
-Instantiate number of variables p, number of samples n, number of latents L:
+Instantiate number of variables `p`, number of samples `n`, number of latents `L`:
 > p = 15; n = 10000; L = runif(1)*20
 
 Generate the grouth truth DAG:
@@ -43,7 +43,7 @@ Print first 5 Shapley values:
 
 # Run the Oracle Version
 
-Instantiate number of variables p, number of samples n, number of latents L:
+Instantiate number of variables `p`, number of samples `n`, number of latents `L`:
 > p = 25; n = 200; L = runif(1)*20
 
 Generate the grouth truth DAG:
