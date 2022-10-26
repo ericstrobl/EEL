@@ -49,3 +49,14 @@ generate_DAG_lat <- function(p,en,perc_lat){
   return(DAG)
 }
 
+
+isAnc <- function(graph,candidates,target){
+  
+  Anc = c()
+  for (c in candidates){
+    if (isAnc_fast_LE(graph,c,target)){
+      Anc = c(Anc, c)
+    }
+  }
+  return(Anc)
+}
