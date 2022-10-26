@@ -29,6 +29,12 @@ Remove target and latents from data:
 Run EEL:
 > out = EEL(X$data[1:n,-c(G$Y,G$L)],X$data[1:n,G$Y])
 
+Print first 5 Shapley values:
+> ix = intersect(1:n,which(X$data[,G$Y]==1))
+
+> print(out$scores[ix[1:5],]
+
+
 # Run the Oracle Version
 
 Instantiate number of variables p, number of samples n, number of latents L:
