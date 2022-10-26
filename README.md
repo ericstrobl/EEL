@@ -10,7 +10,7 @@ The ``Experiments`` folder contains code to replicate the experimental results i
 
 > install_local("Directory of EEL-main.zip")
 
-> library(RCI)
+> library(EEL)
 
 # Run the Sample Version
 
