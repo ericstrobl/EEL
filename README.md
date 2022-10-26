@@ -32,7 +32,7 @@ Run EEL:
 Print first 5 Shapley values:
 > ix = intersect(1:n,which(X$data[,G$Y]==1))
 
-> print(out$scores[ix[1:5],]
+> print(out$scores[ix[1:5],])
 
 
 # Run the Oracle Version
