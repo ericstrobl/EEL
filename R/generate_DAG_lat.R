@@ -48,38 +48,3 @@ generate_DAG_lat <- function(p,en,perc_lat){
   
   return(DAG)
 }
-
-
-isAnc <- function(graph,candidates,target){
-  
-  Anc = c()
-  for (c in candidates){
-    if (isAnc_fast_LE(graph,c,target)){
-      Anc = c(Anc, c)
-    }
-  }
-  return(Anc)
-}
-
-isAnc_fast_LE <- function(graph,a,b,visited=rep(FALSE,nrow(graph)))
-{
-  
-  if (a %in% b){
-    return(TRUE)
-  }
-  
-  visited[a] = TRUE;
-  
-  adj = which(graph[a,] & !visited);
-  
-  out=FALSE;
-  for (j in adj){
-    out=isAnc_fast_LE(graph, j, b, visited);
-    if(out==TRUE){
-      break;
-    }
-  }
-  
-  return(out)
-  
-}
