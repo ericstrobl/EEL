@@ -14,9 +14,11 @@ EEL is an algorithm that discovers sample-specific root causes even when confoun
 
 # Run the Oracle Version
 
-> p = 25; n = 200; L = runif(1)*20 # instantiate number variables p, number samples n, number latents L
+Instantiate number variables p, number samples n, number latents L:
+> p = 25; n = 200; L = runif(1)*20
 
-> G = generate_DAG_lat(p=p,en=2,perc_lat = L) # generate ground truth DAG
+Generate the grouth truth DAG:
+> G = generate_DAG_lat(p=p,en=2,perc_lat = L)
  
 > X = sample_DAG_lat(nsamps = n,G); nD = normalizeData2(X$data) # samle DAG and normalize
 
