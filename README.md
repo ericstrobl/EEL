@@ -18,7 +18,7 @@ Instantiate number of variables p, number of samples n, number of latents L:
 Generate the grouth truth DAG:
 > G = generate_DAG_lat(p=p,en=2,perc_lat = L)
 
-Sample DAG and normalize:
+Sample DAG and normalize to prevent gaming of variances:
 > X = sample_DAG_lat(nsamps = n,G)
 
 > nD = normalizeData2(X$data) 
