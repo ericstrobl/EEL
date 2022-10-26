@@ -1,3 +1,5 @@
+![alt text](https://github.com/ericstrobl/EEL/EEL.png)
+
 # Extract Errors with Latents (EEL)
 
 EEL is an algorithm that discovers sample-specific root causes even when confounding exists among the predictors. The algorithm does not require knowledge about the underlying causal graph. EEL also identifies the sample-specific total effects of each root cause when theory allows; otherwise, it outputs a measure of predictivity, and these two cases are unified under Shapley values. EEL is designed to handle a noisy binary target -- like a diagnostic label -- and is therefore particularly suitable for identifying root causes of disease.
