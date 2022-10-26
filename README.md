@@ -25,7 +25,7 @@ Sample DAG and normalize. The oracle needs some samples to compute regression re
 
 > nD = normalizeData2(X$data) 
 
-Remove target and latents from data
+Remove target and latents from data:
 > X$data[,-c(G$Y,G$L)] = nD$X[,-c(G$Y,G$L)]
  
 Get all the info required by the oracle including ground truth total effects, ground truth errors, index of target, index of latents:
