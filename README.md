@@ -14,20 +14,32 @@ EEL is an algorithm that discovers sample-specific root causes even when confoun
 
 # Run the Oracle Version
 
-Instantiate number variables p, number samples n, number latents L:
-> p = 25; n = 200; L = runif(1)*20
+Instantiate number of variables p, number of samples n, number of latents L:
+> p = 25
+
+> n = 200
+
+> L = runif(1)*20
 
 Generate the grouth truth DAG:
 > G = generate_DAG_lat(p=p,en=2,perc_lat = L)
  
-> X = sample_DAG_lat(nsamps = n,G); nD = normalizeData2(X$data) # samle DAG and normalize
+Sample DAG and normalize. The oracle needs some samples to compute regression residuals:
+> X = sample_DAG_lat(nsamps = n,G)
 
-> X$data[,-c(G$Y,G$L)] = nD$X[,-c(G$Y,G$L)] # remove target and latents
+> nD = normalizeData2(X$data) 
+
+Remove target and latents from data
+> X$data[,-c(G$Y,G$L)] = nD$X[,-c(G$Y,G$L)]
  
-> oracle = organize_oracle(G,X,p,L) # get all the info required by oracle
+Get all the info required by the oracle:
+> oracle = organize_oracle(G,X,p,L)
 
-> out = EEL(X$data[,-c(G$Y,G$L)],X$data[,G$Y],oracle=oracle) # run EEL 
+Run EEL:
+> out = EEL(X$data[,-c(G$Y,G$L)],X$data[,G$Y],oracle=oracle) 
  
-> G_theory = ground_truth_dependence_graph(G) # compute ground truth dependence graph of inducing terms
+Compute ground truth dependence graph of inducing terms:
+> G_theory = ground_truth_dependence_graph(G)
 
-> print(sum(out$G != G_theory[-c(G$Y,G$L),-c(G$Y,G$L)])) # print number of errors, should be zero
+Print number of errors, should be zero
+> print(sum(out$G != G_theory[-c(G$Y,G$L),-c(G$Y,G$L)])) 
